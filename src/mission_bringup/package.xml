@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mission_bringup</name>
+  <version>0.1.0</version>
+  <description>项目二 launch 与配置总入口：建图 / 导航 / 任务一键起（依赖项目一 diff_drive_bringup、nav2_bringup、slam_toolbox、rplidar_ros）</description>
+  <maintainer email="dev@example.com">robot-dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>mission_manager</exec_depend>
+  <exec_depend>mission_msgs</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>nav2_amcl</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+  <exec_depend>rplidar_ros</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <!-- 项目一底盘：独立仓库，先 colcon build 并 source 再起 bringup.launch.py -->
+  <!-- <exec_depend>diff_drive_bringup</exec_depend> -->
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

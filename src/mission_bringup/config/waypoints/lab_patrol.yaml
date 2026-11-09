@@ -1,0 +1,26 @@
+# lab_patrol.yaml —— 实验室巡检示例：含到点业务（wait / spin），循环巡航
+
+mission:
+  name: "lab_patrol"
+  loop: true
+  max_retries: 2
+  skip_on_fail: true
+  goal_timeout_sec: 60.0
+
+waypoints:
+  - id: "wp1"
+    pose: {x: 1.20, y: 0.50, yaw: 0.0}
+    action: "navigate"
+    xy_tolerance: 0.10
+    yaw_tolerance: 0.08
+  - id: "wp2"
+    pose: {x: 3.50, y: 1.80, yaw: 1.57}
+    action: "navigate"
+  - id: "charge_check"
+    pose: {x: 0.20, y: 2.50, yaw: 3.14}
+    action: "wait"
+    duration_sec: 5.0
+  - id: "wp5"
+    pose: {x: 2.00, y: 0.20, yaw: 0.0}
+    action: "spin"
+    target_yaw: 6.28          # 原地一圈观察

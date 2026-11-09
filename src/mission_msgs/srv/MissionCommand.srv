@@ -1,0 +1,8 @@
+# MissionCommand.srv —— 任务控制命令
+# command: START | PAUSE | RESUME | ABORT | RELOAD
+string command
+# RELOAD/START 时可指定路点文件路径（空则用 launch 默认值）
+string mission_file
+---
+bool success
+string message
